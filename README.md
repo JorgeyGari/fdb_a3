@@ -1,2 +1,5 @@
-# fdb_a3
-Assignment 3, Files and Databases (UC3M)
+Third assignment for the course Files and Databases, imparted by Universidad Carlos III de Madrid in Spring 2023. Built by Laura Belizón Merchán and Jorge Lázaro Ruiz.
+
+Physical design on Oracle DB.
+
+If you are a student who has been assigned this project as well, please **do not copy our work**. Only use it for guidance. We uploaded it to help future students, so we ask you to use it responsibly.
