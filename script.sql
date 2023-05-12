@@ -17,11 +17,11 @@ DROP TABLE NATIONALITIES CASCADE CONSTRAINTS;
 
 DROP CLUSTER albums_cluster;
 
--- Create the cluster on the "PAIR" column of the "albums" table
-CREATE CLUSTER albums_cluster (PAIR CHAR(15)) INDEX;
+-- Create the monocluster on the "PAIR" column of the "tracks" table
+-- CREATE CLUSTER cluster_tracks (PAIR CHAR(15));
 
 -- Create index on cluster
-CREATE INDEX idx_pair ON CLUSTER albums_cluster;
+-- CREATE INDEX idx_pair ON CLUSTER cluster_tracks;
 
 -- CREATE INDEX idx_pair ON CLUSTER albums_cluster;
 
@@ -114,8 +114,8 @@ CONSTRAINT UK_ALBUMS UNIQUE (performer,format,title,rel_date),
 CONSTRAINT FK_ALBUMS1 FOREIGN KEY(performer) REFERENCES PERFORMERS,
 CONSTRAINT FK_ALBUMS2 FOREIGN KEY(manager) REFERENCES MANAGERS,
 CONSTRAINT FK_ALBUMS3 FOREIGN KEY(publisher) REFERENCES PUBLISHERS,
-CONSTRAINT CK_format CHECK (format in ('T','C','M','V','S')))
-CLUSTER albums_cluster (PAIR);
+CONSTRAINT CK_format CHECK (format in ('T','C','M','V','S'))
+);
 
 CREATE TABLE SONGS (
 title      VARCHAR2(50),
@@ -141,7 +141,7 @@ CONSTRAINT FK_TRACKS1 FOREIGN KEY (PAIR) REFERENCES ALBUMS  ON DELETE CASCADE,
 CONSTRAINT FK_TRACKS2 FOREIGN KEY (title, writer) REFERENCES SONGS,
 CONSTRAINT FK_TRACKS3 FOREIGN KEY (studio) REFERENCES STUDIOS ON DELETE SET NULL,
 CONSTRAINT CK_duracion CHECK (duration<=5400))
-CLUSTER albums_cluster (PAIR);
+-- CLUSTER cluster_tracks (PAIR);
 
 -- Create index for the tracks table with the PAIR attribute
 CREATE INDEX idx_pair ON TRACKS (PAIR);

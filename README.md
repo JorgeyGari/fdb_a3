@@ -5,3 +5,5 @@ Physical design on Oracle DB.
 If you are a student who has been assigned this project as well, please **do not copy our work**. Only use it for guidance. We uploaded it to help future students, so we ask you to use it responsibly.
 
 [Full statement available here.](https://aulaglobal.uc3m.es/pluginfile.php/6167210/mod_resource/content/0/3rd_assignment_GMAC.pdf)
+
+> Note: This solution implements only an index for `TRACKS.PAIR`.
